@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lumière Kebaya</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ===========================
+        HEADER
+=========================== -->
+
+    <header>
+      <div class="logo">
+        <i class="fa-solid fa-crown"></i>
+
+        <span>Lumière Kebaya</span>
+      </div>
+
+      <nav>
+        <a href="#home">Beranda</a>
+
+        <a href="#kategori">Kategori</a>
+
+        <a href="#produk">Produk</a>
+
+        <a href="#kontak">Kontak</a>
+      </nav>
+
+      <div class="header-icon">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari kebaya, tas, rok..."
+          />
+        </div>
+
+        <button class="wishlist-icon" id="wishlistBtn">
+          <i class="fa-solid fa-heart"></i>
+
+          <span id="wishlistCount">0</span>
+        </button>
+
+        <button class="cart-icon" id="cartBtn">
+          <i class="fa-solid fa-cart-shopping"></i>
+
+          <span id="cartCount">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===========================
+        HERO
+=========================== -->
+
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h4>Hi Lumière's! 💕</h4>
+
+        <h1>Elegance in Every Thread</h1>
+
+        <p>
+          Selamat datang di Lumière Kebaya. Temukan koleksi kebaya premium, tas
+          elegan, rok modern, dan berbagai fashion wanita terbaik dengan
+          kualitas premium.
+        </p>
+
+        <button id="shopNow" class="hero-btn">Belanja Sekarang</button>
+      </div>
+
+      <div class="hero-image">
+        <img src="logo.jpeg" alt="Hero Lumiere" />
+      </div>
+    </section>
+
+    <!-- ===========================
+        HERO SLIDER
+=========================== -->
+
+    <section class="slider">
+      <button class="slide-arrow" id="prevSlide">❮</button>
+
+      <div class="slider-wrapper">
+        <div class="slide active">
+          <img src="set2.jpeg" />
+
+          <div class=Lumière Cerry Premium</h2>
+
+            <p>Rp600.000</p>
+
+            <button class="goProduct" data-product="7">Lihat Produk</button>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="kebaya3.jpeg" />
+
+          <div class="slide-content">
+            <h2>Matcha Strawberry Top</h2>
+
+            <p>Rp479.000</p>
+
+            <button class="goProduct" data-product="8">Lihat Produk</button>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="kebaya5.jpeg" />
+
+          <div class="slide-content">
+            <h2>Seraphina Kebaya</h2>
+
+            <p>Rp500.000</p>
+
+            <button class="goProduct" data-product="9">Lihat Produk</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="slide-arrow" id="nextSlide">❯</button>
+    </section>
+    <!-- ===========================
+        KATEGORI
+=========================== -->
+
+    <section class="kategori" id="kategori">
+      <h2>Kategori Produk</h2>
+
+      <div class="kategori-list">
+        <button class="kategori-btn active" data-category="Semua">Semua</button>
+
+        <button class="kategori-btn" data-category="Kebaya">Kebaya</button>
+
+        <button class="kategori-btn" data-category="Tas">Tas</button>
+
+        <button class="kategori-btn" data-category="Rok">Rok</button>
+
+        <button class="kategori-btn" data-category="Set">Set Premium</button>
+      </div>
+    </section>
+
+    <!-- ===========================
+        PRODUK
+=========================== -->
+
+    <section class="produk" id="produk">
+      <div class="section-title">
+        <h2>Koleksi Lumière Kebaya</h2>
+
+        <p>
+          Pilih koleksi favoritmu. Klik produk untuk melihat detail lengkap,
+          deskripsi, rating, dan melakukan pembelian.
+        </p>
+      </div>
+
+      <!-- Katalog akan dibuat otomatis dari data.js -->
+
+      <div id="productContainer" class="product-grid"></div>
+    </section>
+
+    <!-- ===========================
+        BANNER PROMO
+=========================== -->
+
+    <section class="promo-banner">
+      <div class="promo-card">
+        <h2>🌼 Free Ongkir</h2>
+
+        <p>Gratis ongkir untuk pembelian minimal Rp500.000</p>
+      </div>
+
+      <div class="promo-card">
+        <h2>🎁 Member Exclusive</h2>
+
+        <p>Dapatkan voucher diskon khusus pelanggan Lumière Kebaya.</p>
+      </div>
+
+      <div class="promo-card">
+        <h2>✨ Premium Quality</h2>
+
+        <p>Seluruh produk menggunakan bahan premium dan jahitan berkualitas.</p>
+      </div>
+    </section>
+    <!-- ===========================
+        POPUP DETAIL PRODUK
+=========================== -->
+
+    <div class="product-modal" id="productModal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeProductModal">&times;</span>
+
+        <div class="modal-left">
+          <img id="modalImage" src="" alt="Produk" />
+        </div>
+
+        <div class="modal-right">
+          <h2 id="modalName"></h2>
+
+          <h3 id="modalPrice"></h3>
+
+          <div class="rating">
+            ⭐⭐⭐⭐⭐
+            <span id="modalRating"></span>
+          </div>
+
+          <p id="modalDescription"></p>
+
+          <div class="stock-box">
+            <p>
+              Stok :
+              <span id="modalStock"></span>
+            </p>
+          </div>
+
+          <div class="qty-box">
+            <button id="minusQty">-</button>
+
+            <input type="number" id="qty" value="1" min="1" />
+
+            <button id="plusQty">+</button>
+          </div>
+
+          <div class="modal-button">
+            <button id="chatSeller">
+              <i class="fa-brands fa-whatsapp"></i>
+              Chat Seller
+            </button>
+
+            <button id="modalCart">
+              <i class="fa-solid fa-cart-shopping"></i>
+              Tambah Keranjang
+            </button>
+
+            <button id="modalBuy">Beli Sekarang</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===========================
+        OVERLAY
+=========================== -->
+
+    <div id="overlay"></div>
+
+    <!-- ===========================
+        KERANJANG
+=========================== -->
+
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>🛒 Keranjang Belanja</h2>
+
+        <button id="closeCart">&times;</button>
+      </div>
+
+      <div id="cartItems">
+        <p class="empty">Keranjang masih kosong.</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <h3>Total</h3>
+
+          <h2 id="cartTotal">Rp0</h2>
+        </div>
+
+        <button id="resetCart">Reset Keranjang</button>
+
+        <button id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+
+    <!-- ===========================
+        CHECKOUT
+=========================== -->
+
+    <div class="checkout-modal" id="checkoutModal">
+      <div class="checkout-box">
+        <span id="closeCheckout">&times;</span>
+
+        <h2>Checkout Pesanan</h2>
+
+        <form id="checkoutForm">
+          <label>Nama Penerima</label>
+          <input type="text" id="namaPenerima" required />
+
+          <label>Alamat Lengkap</label>
+          <textarea id="alamat" required></textarea>
+
+          <label>No. Handphone</label>
+          <input type="text" id="telepon" required />
+
+          <h3>Produk Dipilih</h3>
+
+          <div id="checkoutProduct"></div>
+
+          <div class="checkoutTotal">
+            <span>Total</span>
+
+            <strong id="checkoutTotal"> Rp0 </strong>
+          </div>
+
+          <button type="button" id="paymentBtn">Lanjut Pembayaran</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===========================
+        PEMBAYARAN
+=========================== -->
+
+    <div class="payment-modal" id="paymentModal">
+      <div class="payment-box">
+        <span id="closePayment">&times;</span>
+
+        <h2>Pilih Metode Pembayaran</h2>
+
+        <div class="payment-grid">
+          <button class="payment" data-pay="COD">🚚 COD</button>
+
+          <button class="payment" data-pay="BNI">
+            <img src="payment/bni.png" alt="BNI" />
+          </button>
+
+          <button class="payment" data-pay="BCA">
+            <img src="payment/bca.png" alt="BCA" />
+          </button>
+
+          <button class="payment" data-pay="MANDIRI">
+            <img src="payment/mandiri.png" alt="Mandiri" />
+          </button>
+
+          <button class="payment" data-pay="DANA">
+            <img src="payment/dana.png" alt="DANA" />
+          </button>
+
+          <button class="payment" data-pay="SEABANK">
+            <img src="payment/seabank.png" alt="SeaBank" />
+          </button>
+
+          <button class="payment" data-pay="QRIS">
+            <img src="qris.jpeg" alt="QRIS" />
+          </button>
+        </div>
+
+        <div id="paymentInfo"></div>
+      </div>
+    </div>
+    <!-- ===========================
+        TOAST NOTIFICATION
+=========================== -->
+
+    <div id="toast" class="toast">
+      <i class="fa-solid fa-circle-check"></i>
+
+      <span id="toastText"> Produk berhasil ditambahkan ke keranjang. </span>
+    </div>
+
+    <!-- ===========================
+        BACK TO TOP
+=========================== -->
+
+    <button id="backToTop">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ===========================
+        LOADING
+=========================== -->
+
+    <div id="loadingOverlay">
+      <div class="loading-card">
+        <div class="loading-circle"></div>
+
+        <h2>Lumière Kebaya</h2>
+
+        <p>Loading...</p>
+      </div>
+    </div>
+
+    <!-- ===========================
+        FOOTER
+=========================== -->
+
+    <footer id="kontak">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h2>💛 Lumière Kebaya</h2>
+
+          <p>
+            Elegance in Every Thread. Kebaya premium dengan kualitas terbaik
+            untuk setiap momen spesial.
+          </p>
+        </div>
+
+        <div class="footer-menu">
+          <h3>Menu</h3>
+
+          <a href="#home">Beranda</a>
+
+          <a href="#kategori">Kategori</a>
+
+          <a href="#produk">Produk</a>
+
+          <a href="#kontak">Kontak</a>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Hubungi Kami</h3>
+
+          <p>
+            <i class="fa-brands fa-whatsapp"></i>
+
+            <a href="https://wa.me/6285878511529" target="_blank">
+              0858-7851-1529
+            </a>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+
+            <a href="mailto:atyanabilaa@gmail.com"> atyanabilaa@gmail.com </a>
+          </p>
+
+          <p>
+            <i class="fa-brands fa-instagram"></i>
+
+            <a href="https://instagram.com/atyanabilaa" target="_blank">
+              @atyanabilaa
+            </a>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+
+            Jln. Rancaekek Linggar
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Lumière Kebaya | Designed with 💛 by Atiya Nabila Sabani
+      </div>
+    </footer>
+
+    <!-- ===========================
+        SCRIPT
+=========================== -->
+
+    <script src="data.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
